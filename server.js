@@ -10,9 +10,7 @@ var session       = require('express-session');
 var request		  = require('request');
 var querystring   = require('querystring');
 
-// correct path?
 mongoose.connect('mongodb://localhost/project3'); 
-
 
 app.use(morgan('dev')); 
 app.use(cookieParser());
@@ -41,7 +39,7 @@ app.use(function (req, res, next) {
 var routes = require('./config/routes');
 app.use(routes);
 
-app.listen(process.env.MONGODB_URI || 3000, function () {
+app.listen(process.env.PORT || 3000, function () {
   console.log('Listening');
 });
 
