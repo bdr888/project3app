@@ -10,8 +10,6 @@ var session       = require('express-session');
 var request		  = require('request');
 var querystring   = require('querystring');
 
-mongoose.connect('mongodb://localhost/project3'); 
-
 app.use(morgan('dev')); 
 app.use(cookieParser());
 app.use(bodyParser()); 
@@ -39,7 +37,7 @@ app.use(function (req, res, next) {
 var routes = require('./config/routes');
 app.use(routes);
 
-app.listen(process.env.project || 3000, function () {
+app.listen(process.env.PORT || 3000, function () {
   console.log('Listening');
 });
 
