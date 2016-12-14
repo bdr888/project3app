@@ -11,7 +11,7 @@ var request		  = require('request');
 var querystring   = require('querystring');
 
 // correct path?
-mongoose.connect('mongodb://localhost/spotify'); 
+mongoose.connect('mongodb://localhost/project3'); 
 
 
 app.use(morgan('dev')); 
