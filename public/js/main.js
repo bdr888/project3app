@@ -14,6 +14,7 @@ $(document).ready(function() {
 			}
 		});
 	});
+	// append chosen artist, and chosen artist's related artists
 	$("#searchResults").on("submit", function() {
 		event.preventDefault();
 		console.log("preventDefault");

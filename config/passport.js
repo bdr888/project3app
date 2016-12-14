@@ -3,7 +3,7 @@
 
 var LocalStrategy = require('passport-local').Strategy;
 // local would be oAuthStrategy for third party
-var User = require('../models/user');
+var db = require('../models');
 
 module.exports = function (passport) {
 
@@ -12,7 +12,7 @@ module.exports = function (passport) {
     });
 
     passport.deserializeUser(function(id, callback) {
-      User.findById(id, function(err, user) {
+      db.findById(id, function(err, user) {
           callback(err, user);
       });
     });
@@ -23,7 +23,7 @@ module.exports = function (passport) {
 		passReqToCallback: true
 	}, function(req, email, password, callback) {
 		// find a user with this email
-		User.findOne({'local.email': email}, function(err, user) {
+		db.findOne({'local.email': email}, function(err, user) {
 			if (err) return callback(err);
 
 			if (user) {
@@ -46,7 +46,7 @@ module.exports = function (passport) {
 		passwordField: 'password',
 		passReqToCallback: true
 	}, function(req, email, password, callback) {
-		User.findOne({ 'local.email' : email}, function(err, user) {
+		db.findOne({ 'local.email' : email}, function(err, user) {
 			if (err) {return callback(err);}
 			if (!user) {
 				return callback(null, false, req.flash('loginMessage', 'No user found with that email'));
