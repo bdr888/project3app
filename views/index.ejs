@@ -1,7 +1,7 @@
 <% include ./partials/header.ejs %>
 
-<div class="row">
-  <div class="col-md-12">Your most listened to artists this year<br>
+<!-- <div class="row"> -->
+ <!--  <div class="col-md-12">Your most listened to artists this year<br>
 	<input class="btn btn-default" type="submit" value="Year">
   </div>
 </div>
@@ -22,19 +22,36 @@
   <div class="col-md-3">
   <input class="btn btn-default" type="submit" value="Winter">
   </div>
-</div>
+</div> -->
 
 <div class="row">
-Search for an artist below
+<div class="col-md-12">
+ Start adding artists to your board.
+</div>
+
   <form id="getRelatedArtists">
       <textarea name="relatedArtist" id="searchArtist" placeholder="Search artist name"></textarea>
       <input type="submit" value='submit'>
       </form>
 </div>
 
+<!-- Search results -->
+<!-- how to make this only appear after a search? -->
+<div class="row" id="searchResults">
+Click on an artist to see thier related artists, or add them to your board.
+  <div class="col-md-12"></div>
+</div>
+
+<!-- Choose an aritst from the results and append here -->
 <div class="row">
-  <ul id="results">
-  </ul>
+  <div class="col-md-12">
+    Chosen artist
+  </div>
+  <div class="col-md-12" id="chosenArtist"></div>
+  <div class="col-md-12">
+    Related artists
+  </div>
+  <div class="col-md-12" id="chosenArtistRelated"></div>
 </div>
 
 <% include ./partials/footer.ejs %>
