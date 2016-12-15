@@ -1,5 +1,5 @@
 
-// search for artist, append search results to dom
+// search for artist, append search results to page
 $(document).ready(function() {
 	$("#getRelatedArtists").on("submit", function(){
 		event.preventDefault();
@@ -9,6 +9,7 @@ $(document).ready(function() {
 			console.log(resultsArr[0].name);
 			for (var i = 0; i < resultsArr.length; i++) {
 				$("#searchResultsRow").append("<div class='col-xs-12 col-sm-6 col-md-3'><input onclick= 'chooseArtist()' class= 'btn btn-default searchResultsItem' id='" + resultsArr[i].id +"'type= 'submit' value=" + resultsArr[i].name + "> </div>");
+				console.log(resultsArr[i].name);
 			}
 			var chooseArtist = function() {
 				console.log("click works");
@@ -23,12 +24,5 @@ $(document).ready(function() {
 			};
 		});
 	});
-		
+	 //create - fill in form 
 });
-
-// // on click, 
-// make search results dissapear
-// reset search box
-// get artist related artists, 
-// display artist,
-// display related artist
