@@ -1,27 +1,8 @@
 <% include ./partials/header.ejs %>
 
-<!-- <div class="row"> -->
- <!--  <div class="col-md-12">Your most listened to artists this year<br>
-	<input class="btn btn-default" type="submit" value="Year">
-  </div>
-</div>
-
-<div class="row">
-<div class="col-md-12">
-	Your top artists by season
-</div>
-  <div class="col-md-3">
-	<input class="btn btn-default" type="submit" value="Winter">
-  </div>
-  <div class="col-md-3">
-	<input class="btn btn-default" type="submit" value="Spring">
-  </div>
-  <div class="col-md-3">
-	<input class="btn btn-default" type="submit" value="Summer">
-  </div>
-  <div class="col-md-3">
-  <input class="btn btn-default" type="submit" value="Winter">
-  </div>
+<!-- <div class="row" id="searchbar">
+  <div class="col-md-12">
+    <input type="text" class="text-box" placeholder="Enter Artist" id="artist-input"> 
 </div> -->
 
 <div class="row">
@@ -30,14 +11,14 @@
 </div>
 
   <form id="getRelatedArtists">
-      <textarea name="relatedArtist" id="searchArtist" placeholder="Search artist name"></textarea>
-      <input type="submit" value='submit'>
+      <input name="relatedArtist" id="searchArtist" placeholder="Search artist name"></input>
+      <input type="submit" value='search'>
       </form>
 </div>
 
 <!-- Search results -->
 <!-- how to make this only appear after a search? -->
-<div class="row" id="searchResults">
+<div class="row" id="searchResultsRow">
 Click on an artist to see thier related artists, or add them to your board.
   <div class="col-md-12"></div>
 </div>
@@ -55,3 +36,33 @@ Click on an artist to see thier related artists, or add them to your board.
 </div>
 
 <% include ./partials/footer.ejs %>
+
+
+
+
+
+
+
+<!-- <div class="row"> -->
+ <!--  <div class="col-md-12">Your most listened to artists this year<br>
+  <input class="btn btn-default" type="submit" value="Year">
+  </div>
+</div>
+
+<div class="row">
+<div class="col-md-12">
+  Your top artists by season
+</div>
+  <div class="col-md-3">
+  <input class="btn btn-default" type="submit" value="Winter">
+  </div>
+  <div class="col-md-3">
+  <input class="btn btn-default" type="submit" value="Spring">
+  </div>
+  <div class="col-md-3">
+  <input class="btn btn-default" type="submit" value="Summer">
+  </div>
+  <div class="col-md-3">
+  <input class="btn btn-default" type="submit" value="Winter">
+  </div>
+</div> -->
