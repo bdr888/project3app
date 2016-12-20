@@ -7,6 +7,7 @@ var methodOverride = require('method-override');
 var passport = require("passport");
 var usersController = require('../controllers/users');
 var staticsController = require('../controllers/statics');
+var resultsController = require('../controllers/results');
 
 function authenticatedUser(req, res, next) {
 // if authenticated, continue
@@ -32,8 +33,8 @@ router.route("/logout")
 // router.route("/secret")
 // 	.get(authenticatedUser, usersController.secret);
 
-// router.route('/artist')
-// .get(artistController);
+router.route('/results')
+.post(resultsController.postResults);
 
 module.exports = router;
 
