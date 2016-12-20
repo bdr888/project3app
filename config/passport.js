@@ -12,7 +12,7 @@ module.exports = function (passport) {
     });
 
     passport.deserializeUser(function(id, callback) {
-      db.findById(id, function(err, user) {
+      db.User.findById(id, function(err, user) {
           callback(err, user);
       });
     });
@@ -23,7 +23,7 @@ module.exports = function (passport) {
 		passReqToCallback: true
 	}, function(req, email, password, callback) {
 		// find a user with this email
-		db.findOne({'local.email': email}, function(err, user) {
+		db.User.findOne({'local.email': email}, function(err, user) {
 			if (err) return callback(err);
 
 			if (user) {
@@ -46,7 +46,7 @@ module.exports = function (passport) {
 		passwordField: 'password',
 		passReqToCallback: true
 	}, function(req, email, password, callback) {
-		db.findOne({ 'local.email' : email}, function(err, user) {
+		db.User.findOne({ 'local.email' : email}, function(err, user) {
 			if (err) {return callback(err);}
 			if (!user) {
 				return callback(null, false, req.flash('loginMessage', 'No user found with that email'));

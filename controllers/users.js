@@ -36,9 +36,7 @@ function getLogout(request, response) {
 	response.redirect('/');
 }
 
-// what the fuck?
-
-// Restricted page
+// Restricted page - in progress, not sure if even close
 // function secret(request, response){
 	// if logged in see secret message
 // 	var secretStrategy = (passport.authenticate('local-login', {

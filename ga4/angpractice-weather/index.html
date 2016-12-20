@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Angular Directives lesson</title>
+	<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+	<script src="https://unpkg.com/ng-table@2.0.2/bundles/ng-table.min.js"></script>
+	<script src="app.js"></script>
+	<script src=""></script>
+	<link rel="stylesheet"; href="https://unpkg.com/ng-table@2.0.2/bundles/ng-table.min.css">
+	
+
+</head>
+<body ng-app="ngDirectives">
+
+	<div ng-controller="DirectivesController">
+
+	<button ng-click="count = count + 1" ng-init="count=0">
+	  Increment
+	</button>
+		<span>count: {{count}}</span>
+		<span>ng hide</span>
+		<span>ng show</span>
+	</div>
+
+	<div ng-controller="TableController">
+
+	<table ng-table="vm.tableParams" class="table" show-filter="true">
+    <tr ng-repeat="user in $data">
+        <td title="'Name'" filter="{ name: 'text'}" sortable="'name'">
+            {{user.name}}</td>
+        <td title="'Age'" filter="{ age: 'number'}" sortable="'age'">
+            {{user.age}}</td>
+    </tr>
+	</table>
+
+	</div>
+
+</body>
+</html>

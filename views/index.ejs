@@ -4,7 +4,7 @@
   <div class="col-md-12">
     <input type="text" class="text-box" placeholder="Enter Artist" id="artist-input"> 
 </div> -->
-
+<!-- search area -->
 <div class="row">
 <div class="col-md-12 title">
  Start adding artists to your board.
@@ -16,36 +16,34 @@
       </form>
 </div>
 
-<!-- Search results -->
-<!-- how to make this only appear after a search? -->
-<div class="row" id="searchResultsRow">
-Click on an artist to see thier related artists, or add them to your board.
-  <div class="col-md-12"></div>
-</div>
-
-<!-- Choose an aritst from the results and append here -->
+<!-- album node -->
 <div class="row">
-  <div class="col-md-12 title">
-    Chosen artist
+  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 node">
+    <div class="col-xs-2 col-sm-2 col-md-2 .col-xs-offset-10 col-ms-offset-10 col-md-offset-10 okbutton">
+    <div class="btn-group" role="group">
+     <button type="button" class="btn btn-default btn-lg">
+     <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+     </button>
+    </div>
   </div>
-  <div class="col-md-12" id="chosenArtist"></div>
-  <div class="col-md-12 title">
-    Related artists
-  </div>
-  <div class="col-md-12" id="chosenArtistRelated"></div>
-</div>
-
-<!-- form for talking about album -->
-<div class="row">
-<div class="col-md-12 title">
-Write a little about your choices
-</div>
-  <form id="description">
-      <textarea name="artist-description" id="artist-description" placeholder="Write a little about this artist"></textarea>
-      <input type="submit" value='post'>
-      </form>
-</div>
-
+   <!-- add album button -->
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 addbutton">
+    <div class="btn-group" role="group">
+     <button type="button" class="btn btn-default btn-lg">
+     <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+     Click to add an album
+     </button>
+   </div>
+  </div> 
+<!-- album description text area -->
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 textarea">
+   <span class="input-group">
+      <textarea type="text" class="form-control" placeholder="Write about this album" aria-label="Album description"></textarea>
+      <div class="input-group-btn">
+      <!-- Buttons -->
+      <!-- <button class="btn btn-default" type="button">Save</button> -->
+   </span>
+  </div> 
 
 <% include ./partials/footer.ejs %>
 
